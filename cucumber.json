@@ -1,0 +1,10 @@
+{
+  "default": {
+    "require": [
+      "src/gov.census.isr.utils/**/*.ts",
+      "src/gov.census.isr.steps/**/*.ts"
+    ],
+    "paths": ["resources/gov.census.isr.feature/**/*.feature"],
+    "requireModule": ["ts-node/register"]
+  }
+}

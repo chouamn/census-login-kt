@@ -1,0 +1,16 @@
+{
+  "name": "census-login-kt",
+  "version": "1.0.0",
+  "description": "BDD with Cucumber + Playwright + TypeScript — 2026 Census Test login (KT build)",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.10.5",
+    "dotenv": "^17.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
