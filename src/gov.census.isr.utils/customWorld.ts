@@ -1,11 +1,11 @@
 import { setWorldConstructor, World, IWorldOptions } from '@cucumber/cucumber';
 import { Browser, Page } from '@playwright/test';
-import { LoginPage } from '../gov.census.isr.pages/loginPage';
+import { LoginActions } from '../gov.census.isr.actions/loginActions';
 
 export class CustomWorld extends World {
   browser!: Browser;
   page!: Page;
-  loginPage!: LoginPage;
+  loginActions!: LoginActions;
 
   constructor(options: IWorldOptions) {
     super(options);

@@ -9,5 +9,7 @@ Before(async function (this: CustomWorld) {
 });
 
 After(async function (this: CustomWorld) {
-  await this.browser.close();
+  if (this.browser) {
+    await this.browser.close();
+  }
 });
