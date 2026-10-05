@@ -1,11 +1,11 @@
 import { setWorldConstructor, World, IWorldOptions } from '@cucumber/cucumber';
 import { Browser, Page } from '@playwright/test';
-import { LoginActions } from '../gov.census.isr.actions/loginActions';
+import { ActionContext } from './actionContext';
 
 export class CustomWorld extends World {
   browser!: Browser;
   page!: Page;
-  loginActions!: LoginActions;
+  actions!: ActionContext;
 
   constructor(options: IWorldOptions) {
     super(options);
