@@ -1,0 +1,17 @@
+{
+  "jsonDir": "reports/json",
+  "reportPath": "reports/html",
+  "reportName": "Census Login KT",
+  "pageTitle": "Census Login KT - Test Report",
+  "brandLogo": "assets/images/company-logo.png",
+  "displayDuration": true,
+  "humanReadableDuration": true,
+  "metadata": {
+    "browser": { "name": "chromium", "version": "-" },
+    "platform": { "name": "win32", "version": "-" }
+  },
+  "customData": {
+    "projectName": "Census Login KT",
+    "environment": "UAT"
+  }
+}

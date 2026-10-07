@@ -5,6 +5,10 @@
       "src/gov.census.isr.steps/**/*.ts"
     ],
     "paths": ["resources/gov.census.isr.feature/**/*.feature"],
-    "requireModule": ["ts-node/register"]
+    "requireModule": ["ts-node/register"],
+    "format": [
+      "progress-bar",
+      ["json", "reports/json/cucumber-report.json"]
+    ]
   }
 }

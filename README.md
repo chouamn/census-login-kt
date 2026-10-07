@@ -119,6 +119,29 @@ npm test
 Runs headed (a visible Chromium window opens) against the live UAT site defined in
 `.env.uat`. This requires network access to `access.uat.dice.census.gov`.
 
+## Generating a report
+
+```bash
+npm run test:report
+```
+
+Runs the suite, then generates an HTML dashboard and a timestamped PDF **regardless of
+whether the run passed or failed** — the process still exits with the real pass/fail code,
+so CI correctly reports red/green.
+
+| Step | Produces | Tool |
+|---|---|---|
+| `cucumber-js` (via `cucumber.json`'s `format`) | `reports/json/cucumber-report.json` | built into Cucumber |
+| `npx mchr` (`report:html` script) | `reports/html/index.html` + a page per feature | `multiple-cucumber-html-reporter`, config in `.multiple-cucumber-html-reporterrc` |
+| `scripts/generatePdfReport.ts` (`report:pdf` script) | `reports/pdf/report-<timestamp>.pdf` | Playwright's own `chromium`, printing the generated HTML |
+
+To add your company logo to the report: drop the image file at
+`assets/images/company-logo.png` (matching the `brandLogo` path in
+`.multiple-cucumber-html-reporterrc`). If the file isn't there, the reporter just falls back
+to its own default logo — it won't fail the build.
+
+`reports/` is gitignored — it's regenerated per run, not committed.
+
 ## Known gaps / TODOs
 
 These are flagged inline in the code and should be verified against the real UAT page before
